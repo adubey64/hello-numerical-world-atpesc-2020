@@ -4,7 +4,7 @@ RUNAME ?= heat_results
 RM = rm
 
 HDR = Double.H
-SRC = heat.C utils.C args.C exact.C ftcs.C upwind15.C crankn.C
+SRC = heat_app.c 
 OBJ = $(SRC:.C=.o)
 GCOV = $(SRC:.C=.C.gcov) $(SRC:.C=.gcda) $(SRC:.C=.gcno) $(HDR:.H=.H.gcov)
 EXE = heat
@@ -26,7 +26,7 @@ clean: check_clean
 plot:
 	@./tools/run_$(PTOOL).sh $(RUNAME)
 
-#
+
 # Run for a long time with random initial condition
 # and confirm linear stead-state upon termination
 #
